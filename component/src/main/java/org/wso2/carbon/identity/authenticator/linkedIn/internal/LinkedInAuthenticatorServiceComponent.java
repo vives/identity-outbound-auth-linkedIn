@@ -32,31 +32,31 @@ import java.util.Hashtable;
  */
 public class LinkedInAuthenticatorServiceComponent {
 
-    private static Log log = LogFactory.getLog(LinkedInAuthenticatorServiceComponent.class);
+	private static Log log = LogFactory.getLog(LinkedInAuthenticatorServiceComponent.class);
 
-    /**
-     * activate custom authenticator.
-     *
-     * @param componentContext the Component Context
-     */
-    protected void activate(ComponentContext componentContext) {
-            LinkedInAuthenticator authenticator = new LinkedInAuthenticator();
-            Hashtable<String, String> props = new Hashtable<>();
-            componentContext.getBundleContext().registerService(ApplicationAuthenticator.class.getName(),
-                    authenticator, props);
-            if (log.isDebugEnabled()) {
-                log.debug("linkedIn authenticator is activated");
-            }
-    }
+	/**
+	 * This method is to register the LinkedIn authenticator service.
+	 *
+	 * @param componentContext the Component Context
+	 */
+	protected void activate(ComponentContext componentContext) {
+		LinkedInAuthenticator authenticator = new LinkedInAuthenticator();
+		Hashtable<String, String> props = new Hashtable<>();
+		componentContext.getBundleContext()
+		                .registerService(ApplicationAuthenticator.class.getName(), authenticator, props);
+		if (log.isDebugEnabled()) {
+			log.debug("linkedIn authenticator is activated");
+		}
+	}
 
-    /**
-     * deactivate custom authenticator.
-     *
-     * @param componentContext the Component Context
-     */
-    protected void deactivate(ComponentContext componentContext) {
-        if (log.isDebugEnabled()) {
-            log.debug("linkedIn authenticator is deactivated");
-        }
-    }
+	/**
+	 * This method is to deactivate the LinkedIn authenticator the service.
+	 *
+	 * @param componentContext the Component Context
+	 */
+	protected void deactivate(ComponentContext componentContext) {
+		if (log.isDebugEnabled()) {
+			log.debug("linkedIn authenticator is deactivated");
+		}
+	}
 }

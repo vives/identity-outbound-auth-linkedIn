@@ -20,23 +20,54 @@
 package org.wso2.carbon.identity.authenticator.linkedIn;
 
 public class LinkedInAuthenticatorConstants {
+
+    /*
+	 * Private Constructor will prevent the instantiation of this class directly
+	 */
+    private LinkedInAuthenticatorConstants() {
+    }
+
+    //LinkedIn authorize endpoint URL.
     public static final String LINKEDIN_OAUTH_ENDPOINT = "https://www.linkedin.com/uas/oauth2/authorization";
+    //LinkedIn token  endpoint URL.
     public static final String LINKEDIN_TOKEN_ENDPOINT = "https://www.linkedin.com/uas/oauth2/accessToken";
-    public static final String LINKEDIN_USERINFO_ENDPOINT = "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,industry,headline,email-address)?format=json";
+    //LinkedIn user info endpoint URL.
+    public static final String LINKEDIN_USERINFO_ENDPOINT =
+            "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,industry,headline,email-address)?format=json";
+    //LinkedIn connector friendly name.
     public static final String LINKEDIN_CONNECTOR_FRIENDLY_NAME = "LinkedIn Authenticator";
+    //LinkedIn connector name.
     public static final String LINKEDIN_CONNECTOR_NAME = "LinkedIn";
+    //The query string.
     public static final String QUERY_STRING = "scope=r_basicprofile%20r_emailaddress";
+    //The oauth2 access token
     public static final String LINKEDIN_OAUTH2_ACCESS_TOKEN_PARAMETER = "oauth2_access_token";
+    //The log in type.
     public static final String LINKEDIN_LOGIN_TYPE = "linkedin";
+    //The authorization code that the application requested.
     public static final String OAUTH2_GRANT_TYPE_CODE = "code";
+    //A randomly generated non-reused value that is sent in the request and returned in the response.
     public static final String OAUTH2_PARAM_STATE = "state";
+    //The access token.
     public static final String ACCESS_TOKEN = "access_token";
+    //The client ID of the client application.
     public static final String CLIENT_ID = "Client Id";
+    //The value of the key that contains the client password.
     public static final String CLIENT_SECRET = "Client Secret";
+    //The oauth2 authorization URL.
     public static final String OAUTH2_AUTHZ_URL = "OAuth2AuthzUrl";
+    //The oauth2 token URL.
     public static final String OAUTH2_TOKEN_URL = "OAUTH2TokenUrl";
+    //The reply URL of the application.
     public static final String CALLBACK_URL = "callbackUrl";
-    public static final String LAST_NAME = "lastName";
+    //The ID of the user.
     public static final String USER_ID = "id";
+    //The claim dialect URI.
     public static final String CLAIM_DIALECT_URI = "http://wso2.org/linkedin/claims";
+    //The Http get method.
+    public static final String HTTP_GET_METHOD = "GET";
+    //Constant for connection time out.
+    public static final int CONNECTION_TIMEOUT_VALUE = 15000;
+    //Constant for read time out.
+    public static final int READ_TIMEOUT_VALUE = 15000;
 }
